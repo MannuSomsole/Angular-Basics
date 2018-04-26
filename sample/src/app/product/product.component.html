@@ -1,0 +1,20 @@
+<h3>
+  Product
+</h3>
+<div>
+  <label>Name:    </label>  <input type="text" name="productName" (keyup)="onKey($event)">
+</div>
+<div>
+  <button name="proCost" (click)="increaseCost()">Increase product cost</button>
+</div>
+<app-product-details [productCost]="cost">
+  <app-quick-view></app-quick-view>
+</app-product-details>
+<p>{{myData | async}}</p>
+<h2>Async Hero Message and AsyncPipe</h2>
+<p>Message: {{ (message$ | async)?.message }}</p>
+<button (click)="resend()">Resend</button>
+
+<ul *ngFor="let item of myMessages">
+  <li>{{item}}</li>
+</ul>

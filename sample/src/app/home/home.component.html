@@ -1,0 +1,16 @@
+<h5 [ngStyle]="{'color':'blue'}"> Home</h5>
+<p appError>This is error !! </p>
+<app-child [count]="noOfStudents" (sendMsgEvent)="showInHome($event)"></app-child>
+
+<button [routerLink]="['/details']"> go to details</button>
+<button (click)="goToDetails()">One more way to go to Details</button>
+<button (click)="showInfo = !showInfo">Toggle Info</button>
+<p appInfo *ngIf="showInfo===true"> This is for your information</p>
+<div *ngFor="let student of students">
+  <p>{{student.name | custom}} : {{student.class | uppercase}}</p>
+</div>
+
+<p [ngStyle]="{'color':'red'}" >NG STYLING</p>
+
+
+<app-menu [data]="noOfStudents" (count)="showInHome($event)"></app-menu>
